@@ -1,8 +1,8 @@
 N = int(input())
-
+MAX_NUM = 1000
 arr = list(map(int, input().split()))
 
-check = [0 for _ in range(N)]
+check = [0 for _ in range(MAX_NUM)]
 num = -1
 
 for i in arr:
