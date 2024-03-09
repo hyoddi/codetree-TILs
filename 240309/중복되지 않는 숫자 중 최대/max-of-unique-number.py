@@ -12,5 +12,6 @@ for i in arr:
 
     if i > check[-1]:
         check.append(i)
+        ban.append(i)
 
 print(check[-1])
