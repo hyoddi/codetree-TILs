@@ -1,17 +1,16 @@
 N = int(input())
-MAX_NUM = 1000
 arr = list(map(int, input().split()))
 
-check = [0 for _ in range(MAX_NUM)]
-num = -1
+max_num = -1
 
 for i in arr:
+    if i > max_num:
+        cnt = 0
 
-    check[i-1]+=1
-
-for idx, j in enumerate(check):
-
-    if j == 1 and idx + 1 > num:
-        num = idx + 1
-
-print(num)
+        for j in arr:
+            if j == i:
+                cnt+=1
+        
+        if cnt == 1:
+            max_num = i
+print(max_num)
