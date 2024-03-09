@@ -1,17 +1,19 @@
 N = int(input())
 
 arr = list(map(int, input().split()))
+arr.append(-1)
 ban = []
-check = [-1]
 
-for i in arr:
+while(True):
 
-    if i in ban:
-        check.remove(i)
+    tmp = max(arr)
+
+    if arr.count(tmp) > 1 or tmp in ban:
+        arr.remove(tmp)
+        ban.append(tmp)
         continue
+    
+    break
 
-    if i > check[-1]:
-        check.append(i)
-        ban.append(i)
-
-print(check[-1])
+        
+print(max(arr))
