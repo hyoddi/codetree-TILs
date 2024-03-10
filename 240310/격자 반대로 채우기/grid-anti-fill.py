@@ -6,23 +6,27 @@ arr = [
     ]
 
 cnt = 1
+u = 1
 
 for i in range(n-1, -1, -1):
 
-    if i % 2 == 1:
+    if u == 1:
         for j in range(n-1, -1, -1):
             arr[j][i] = cnt
             cnt+=1
+        u = -1
+        
     
-    if i % 2 == 0:
+    elif u == -1:
         for j in range(n):
             arr[j][i] = cnt
             cnt+=1
-    
-    
+        u = 1
+        
 
-for i in arr:
-    for j in i:
-        print(j, end = ' ')
-    
+
+for k in arr:
+    for l in k:
+        print(l, end = ' ')
+
     print()
