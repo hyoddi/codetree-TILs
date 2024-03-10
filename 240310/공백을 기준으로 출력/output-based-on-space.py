@@ -1,6 +1,6 @@
 # 주어진 두 줄의 문자열 입력 받기
-line1 = input("첫 번째 줄을 입력하세요: ")
-line2 = input("두 번째 줄을 입력하세요: ")
+line1 = input()
+line2 = input()
 
 # 두 줄의 문자열을 하나의 문자열로 합치기
 combined_string = line1 + " " + line2
