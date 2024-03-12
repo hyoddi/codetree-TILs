@@ -11,7 +11,7 @@ val = input()
 
 for i in arr:
     if i[0] == val:
-        ans+=len(val)
+        ans+=len(i)
     else:
         arr.remove(i)
 
