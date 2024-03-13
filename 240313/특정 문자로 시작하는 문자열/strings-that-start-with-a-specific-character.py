@@ -1,7 +1,6 @@
 n = int(input())
 
 arr=[]
-ans = 0
 
 for _ in range(n):
     tmp = input()
@@ -9,10 +8,9 @@ for _ in range(n):
 
 val = input()
 
-for i in arr:
-    if i[0] == val:
-        ans+=len(i)
-    else:
-        arr.remove(i)
+ans = [i for i in arr if i[0] == val]
+ans2=0
+for i in ans:
+    ans2+=len(i)
 
-print(f'{len(arr)} {ans/len(arr):.2f}')
+print(f'{len(ans)} {ans2/len(ans):.2f}')
