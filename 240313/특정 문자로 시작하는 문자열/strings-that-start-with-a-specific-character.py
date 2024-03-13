@@ -1,16 +1,14 @@
 n = int(input())
 
-arr=[]
+arr = []
 
 for _ in range(n):
-    tmp = input()
-    arr.append(tmp)
+    arr.append(input())
 
 val = input()
 
-ans = [i for i in arr if i[0] == val]
-ans2=0
-for i in ans:
-    ans2+=len(i)
+new_arr = [i for i in arr if i[0] == val]
+total_length = sum(len(s) for s in new_arr)
+average_length = total_length / len(new_arr)
 
-print(f'{len(ans)} {ans2/len(ans):.2f}')
+print(f'{len(new_arr)} {average_length:.2f}')
