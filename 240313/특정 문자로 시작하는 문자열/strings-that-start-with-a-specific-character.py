@@ -10,11 +10,9 @@ for _ in range(n):
 val = input()
 
 for i in arr:
-    print(i, arr)
     if i[0] == val:
         ans+=len(i)
     else:
         arr.remove(i)
-    print(i, arr)
 
 print(f'{len(arr)} {ans/len(arr):.2f}')
