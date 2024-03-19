@@ -1,11 +1,11 @@
 n = input()
-new_n = ''
-flag = -1
+n = list(n)
 
-for i in range(len(n)):
-    if n[i] == 'e' and flag == -1:
-        flag = 1
-        continue
-    new_n+=n[i]
+for idx, i in enumerate(n):
+    if i == 'e':
+        n.pop(idx)
+        break
+    
+ans = ''.join(n)
 
-print(new_n)
+print(ans)
