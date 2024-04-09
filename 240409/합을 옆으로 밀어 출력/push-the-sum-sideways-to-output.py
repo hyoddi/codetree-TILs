@@ -7,14 +7,6 @@ for _ in range(n):
 
 val = str(val)
 
-arr =[]
+val = val[1:] + val[0]
 
-for i in val:
-    arr.append(i)
-
-tmp = arr.pop(0)
-
-arr.append(tmp)
-
-for i in arr:
-    print(i,end = '')
+print(val)
