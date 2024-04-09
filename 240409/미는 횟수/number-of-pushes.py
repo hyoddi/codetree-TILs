@@ -8,7 +8,7 @@ for _ in range(len(A)):
         flag = 1
         break
     else:
-        A = A[1:] + A[0]
+        A = A[-1] + A[:-1]
         cnt+=1
 
 if flag == -1:
