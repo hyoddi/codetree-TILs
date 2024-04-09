@@ -6,6 +6,7 @@ cnt = 0
 for _ in range(len(A)):
     if A == B:
         flag = 1
+        break
     else:
         A = A[1:] + A[0]
         cnt+=1
