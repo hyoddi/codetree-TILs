@@ -1,41 +1,32 @@
-n, t = map(int, input().split())
-r, c, d = map(str, input().split())
-r ,c = int(r), int(c)
+# 변수 선언 및 입력
+n, t = tuple(map(int, input().split()))
+x, y, c_dir = tuple(input().split())
 
-# 3 - 현재 방향을 빼면 뒤집힐 수 있도록 설정
-
-dys = [1, 0, 0, -1] # 행, x값
-dxs = [0, 1, -1, 0] # 열, y값
-
-
-# 범위 안에 있으면 True, 없으면 False 반환
-def check(x, y):
-    return x > 0 and x <= n  and y > 0 and y <= n
-
-
-# 딕셔너리 이용
+# 각 알파벳 별 방향 번호를 설정합니다.
 mapper = {
     'R': 0,
-    'U': 1,
-    'D': 2,
+    'D': 1,
+    'U': 2,
     'L': 3
 }
+x, y, move_dir = int(x) - 1, int(y) - 1, mapper[c_dir]
 
-# 방향 초기값 설정 
-way = mapper[d]
+dxs = [0, 1, -1,  0]
+dys = [1, 0,  0, -1]
 
+
+def in_range(x, y):
+    return 0 <= x and x < n and 0 <= y and y < n
+
+
+# simulation 진행
 for _ in range(t):
-
-    ny = r + dxs[way] # 행
-    nx = c + dys[way] # 열
-
-
-    if not check(nx, ny):
-        way = 3 - way
-    
+    nx, ny = x + dxs[move_dir], y + dys[move_dir]
+    # 범위 안에 들어온다면 그대로 진행합니다.
+    if in_range(nx, ny):
+        x, y = nx, ny
+    # 벽에 부딪힌다면, 방향을 바꿔줍니다.
     else:
-        r, c = ny, nx
-    
-    
+        move_dir = 3 - move_dir
 
-print(r, c)
+print(x + 1, y + 1)
