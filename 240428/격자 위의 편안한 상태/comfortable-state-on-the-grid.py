@@ -12,14 +12,14 @@ def in_range(tmpx, tmpy):
 def check(nx, ny):
     cnt = 0
     for i in range(4):
-        nx = nx + dxs[i]
-        ny = ny + dys[i]
+        tx = nx + dxs[i]
+        ty = ny + dys[i]
         
         # 범위 밖이라면 스킵
-        if in_range(nx, ny) and arr[ny][nx] == 1:
+        if in_range(tx, ty) and arr[ty][tx] == 1:
             cnt+=1
     
-    return cnt >= 3
+    return cnt
 
 
 
@@ -29,15 +29,11 @@ for _ in range(M):
     y, x = r-1, c-1
 
     arr[y][x] = 1
+    print(y, x)
+    
 
     # 편안한 상태라면,
-    if check(x, y): print(1)
+    if check(x, y) == 3: print(1)
     
     # 불편하다면
     else: print(0)
-
-
-# for i in arr:
-#     for j in i:
-#         print(j, end = ' ')
-#     print()
