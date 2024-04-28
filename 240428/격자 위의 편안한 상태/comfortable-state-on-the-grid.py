@@ -29,7 +29,6 @@ for _ in range(M):
     y, x = r-1, c-1
 
     arr[y][x] = 1
-    print(y, x)
     
 
     # 편안한 상태라면,
